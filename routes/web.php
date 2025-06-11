@@ -9,6 +9,7 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminEventController;
 use App\Http\Controllers\Admin\AdminTicketController;
 use App\Http\Controllers\Admin\AdminConcertController;
@@ -63,12 +64,19 @@ Route::middleware('auth')->group(function () {
     // Proses pembayaran
     Route::post('/payment/{transaction}/process', [PaymentController::class, 'process'])->name('payment.process');
     Route::get('/payment/manual/{transaction}', [PaymentController::class, 'manual'])->name('payment.manual');
+    
     // Halaman pembayaran untuk transaksi tertentu
     Route::get('/payment/{transaction}', [PaymentController::class, 'show'])->name('payment.show');
+    
     // Review event
     Route::get('/tickets', [TicketController::class, 'index'])->name('tickets.index');
 
+    //contact
     Route::get('/contact', [ContactController::class, 'create'])->name('contact.form');
     Route::post('/contact', [ContactController::class, 'store'])->name('contact.submit');
+
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+    Route::post('/profile/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
+    Route::post('/profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
 
 });

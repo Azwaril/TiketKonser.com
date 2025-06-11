@@ -57,7 +57,7 @@
                     </div>
                     <div>
                         <h4 class="font-semibold">Alamat</h4>
-                        <p class="text-sm text-gray-600">Jl. Harmoni Musik No. 88, Jakarta, Indonesia 12345</p>
+                        <p class="text-sm text-gray-600">Jl. Ketintang No. 1, Surabaya, Indonesia</p>
                     </div>
                 </div>
 
