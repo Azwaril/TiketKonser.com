@@ -13,7 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
-            'admin'       => IsAdmin::class,       // Middleware custom admin kamu
+            'admin'       => IsAdmin::class,       
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
